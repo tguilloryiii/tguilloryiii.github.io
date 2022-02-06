@@ -20,8 +20,9 @@ jobs:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_ROOT_PAGE_ID: ${{ secrets.NOTION_ROOT_PAGE_ID }}
         run: |
+          pipenv install
+          pipenv run python ./get-blog-posts.py
           yarn install
-          yarn import-notion-posts
           yarn build
 
       - name: Deploy 🚀
