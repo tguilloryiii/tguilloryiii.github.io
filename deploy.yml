@@ -1,7 +1,7 @@
 name: Build and Deploy
 on:
-  # schedule:
-  #   - cron: "0 0 * * *" # Every day at midnight.
+  schedule:
+    - cron: "0 0 * * *" # Every day at midnight.
   workflow_dispatch:
   push:
     branches:
@@ -10,12 +10,22 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Set up pipenv
+        uses: dschep/install-pipenv-action@v1
+        with:
+          version: 2020.8.13
+
       - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+        uses: actions/checkout@v2.3.2
         with:
           persist-credentials: false
 
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+      - name: Install and Build 🔧
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_ROOT_PAGE_ID: ${{ secrets.NOTION_ROOT_PAGE_ID }}
@@ -26,9 +36,9 @@ jobs:
           yarn build
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+        uses: JamesIves/github-pages-deploy-action@3.5.9
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: public # The folder the action should deploy.
+          BRANCH: gh-pages
+          FOLDER: public
           CLEAN: true
