@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"name": "tguilloryiii.github.io",
+			"path": "tguilloryiii.github.io"
+		},
+		{
+			"path": "Test site"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Test site"
+	}
+}

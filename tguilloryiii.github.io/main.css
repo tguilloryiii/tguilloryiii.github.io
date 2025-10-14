@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+
+:root {
+    --font-color: rgb(233, 233, 233)
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: poppins;
+}
+
+a {
+    text-decoration: none;
+    font-family: poppins;
+    font-weight: 400;
+    color: var(--font-color);
+}
+
+p {
+    font-weight: 4000;
+    color: var(--font-color);
+}
+
+
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    /* mix-blend-mode: difference; */
+}
+
+nav ul {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 1%;
+  }
+
+nav li {
+    list-style: none;
+    padding: 5%;
+}
+
+nav a {
+    font-family: poppins;
+    font-weight: 200;
+    color: white;
+}
+
+.sidebar {
+    width: 25%;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    z-index:1;
+ 
+}
+
+#circle {
+    position: relative;
+    top: 8vh;
+    width: 150px;
+    height: 150px;
+    /* background: black; */
+    border-radius: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-family: poppins;
+    font-weight: 100;
+    text-align: center;
+}
+
+#logo-firstName {
+    font-size: 1.1em;
+}
+
+#logo-suffix {
+    font-size: 3.3em;
+}
+
+section {
+    position: relative;
+    min-height: 100vh;
+    background: rgb(33, 33, 33);
+
+    width: 100%;
+}
+
+/* .shadow-box {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, .3);
+} */
+.section-container {
+    padding-top: 15.5vh;
+    /* padding-left: 5%; */
+    margin-left: 25%;
+    width: 75%;
+}
+
+section h2 {
+    font-size: 3rem;
+    font-weight: 200;
+    position: relative;
+    color: var(--font-color);
+}
+
+section h3 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--font-color);
+    position: relative;
+}
+
+section p {
+    padding-top: 5vh;
+    padding-right:  33%;
+}
+
+#welcome {
+    background: none;
+    z-index: 1;
+}
+
+#intro-overlay {
+    position: absolute; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    width: 100%;
+    height: 100vh;
+    /* background: url(./milad-fakurian-_zSZVxZWhkY-unsplash.jpg) top; */
+    background-size: cover;
+    background-attachment: fixed;
+    background: rgb(33, 33, 33);
+    animation: overlayFadeOut 2s ease forwards;
+    animation-delay: 2s;
+    pointer-events: all;
+    /* background: rgba(0, 0, 0, 1); */
+    color: white;
+    padding: 0;
+    overflow: hidden;
+    z-index: 2;
+}
+
+#gradient-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15%; /* how much of the fade you want */
+    background: linear-gradient(to bottom, rgba(33, 33, 33, 0), rgb(33, 33, 33));
+    z-index: 3;
+}
+
+#welcome-container {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    width: 100%;
+    height: 100vh;
+    /* background: url(./milad-fakurian-_zSZVxZWhkY-unsplash.jpg) top; */
+    background-size: cover;
+    background-attachment: fixed;
+    /* background: rgba(0, 0, 0, 1); */
+    color: white;
+    padding: 0;
+    overflow: hidden;
+    
+
+}
+
+#title {
+    position: absolute; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    /* background: rgba(0, 0, 0, 1); */
+    color: white;
+    padding: 0;
+    overflow: hidden;
+    z-index: 4;
+}
+
+#title h1 {
+    font-family: poppins;
+    font-weight: 200;
+    font-size: 3.33rem;
+    opacity: 0;
+    animation: titleFadeIn 2s ease forwards;
+    z-index: 6;
+}
+
+#welcome-container h1 {
+    font-family: poppins;
+    font-weight: 200;
+    font-size: 3.33rem;
+    z-index: 3;
+}
+
+#welcome-container h2 {
+    font-family: poppins;
+    font-size: 2.1rem;
+    font-weight: 100;
+}
+
+/* #projects {
+    background: white;
+} */
+
+#projects {
+    position: relative;
+    /* background: url(./milad-fakurian-I4yMBCjVljo-unspl.jpg) top; */
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: 0;
+    /* box-shadow: inset 0px 0px 33px black; */
+
+}
+
+.grid {
+    padding-top: 5vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    margin-right: 33%;
+}
+
+.card {
+    background: white;
+    padding: 1rem;
+}
+
+.card::before {
+    display: block;
+    content: "";
+    padding-bottom: 100%;
+}
+
+/* .fa-2x {
+    display: flex;
+    justify-content: flex-start;
+} */
+
+#contact {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* background: white url(./pexels-mitchell-luo-3694708.jpg) top; */
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+}
+
+#contact h2{
+    /* color: white; */
+    font-size: 3rem;
+    font-weight: 200;
+    position: relative;
+    /* mix-blend-mode: difference; */
+}
+
+#contact img{
+    /* mix-blend-mode: difference; */
+    width: 25%;
+    height: auto;
+}
+
+#contact p {
+    padding: 5vh 0;
+    color: white;
+    margin-right: 33%;
+    /* mix-blend-mode: difference; */
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: none;
+}
+
+#footer p {
+    padding: 0;
+    text-align: center;
+    /* color: black; */
+    margin-right: 0;
+}
+
+@keyframes titleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes overlayFadeOut {
+    from {
+        opacity: 1;
+    }
+    to {opacity: 0;
+    }
+}
