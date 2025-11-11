@@ -8,9 +8,26 @@
     <link rel="stylesheet" href="./main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="https://kit.fontawesome.com/3288204a6a.js" crossorigin="anonymous"></script>
+
+    <!-- Preload CSS for faster paint -->
+    <link rel="preload" href="./main.css" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="./main.css"></noscript>
+    
+    <!-- Match site’s background right away -->
+    <style>
+        html,
+        body {
+        background-color: rgb(33, 33, 33);
+        color: rgb(233, 233, 233);
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        }
+    </style>
+
 </head>
 
-<body>
+<body style="background-color: rgb(33,33,33);">
     <header>
         <div class="sidebar">
             <div id="circle">
