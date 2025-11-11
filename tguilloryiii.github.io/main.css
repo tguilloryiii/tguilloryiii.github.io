@@ -17,6 +17,7 @@
 
 html {
     scroll-behavior: smooth;
+    background: var(--main-color);
 }
 
 body {
