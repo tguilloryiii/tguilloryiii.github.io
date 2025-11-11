@@ -1,7 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+@font-face {
+    font-family: 'Poppins';
+    src: url('assets/fonts/Poppins/Poppins-ExtraLight.ttf')
+}
 
 :root {
-    --font-color: rgb(233, 233, 233)
+    --font-color: rgb(233, 233, 233);
+    --main-color: rgb(33, 33, 33);
 }
 
 * {
@@ -17,6 +21,7 @@ html {
 
 body {
     font-family: poppins;
+    background: var(--main-color);
 }
 
 a {
